@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Narrator
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Floor
+  - Objects
+  - Player
+  - Narrator
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2321071979
+    locked: 0
+  - name: Floor
+    uniqueID: 2720715585
+    locked: 0
+  - name: Objects
+    uniqueID: 1864851341
+    locked: 0
+  - name: ObjectsForeground
+    uniqueID: 1879884145
+    locked: 0
+  - name: Narrator
+    uniqueID: 2440245065
+    locked: 0
+  - name: Player
+    uniqueID: 3457779077
+    locked: 0
+  - name: Dialogue
+    uniqueID: 3277706493
+    locked: 0
+  - name: UI
+    uniqueID: 837812385
+    locked: 0
