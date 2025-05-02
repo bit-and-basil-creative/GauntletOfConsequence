@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
+  m_Name: 15_Room5_Choice
+  m_EditorClassIdentifier: 
+  sceneNumber: 15
+  narrationLines:
+  - "\u201CAhhh, I see...\""
+  - '"Hmm, okay. Give me one moment here..."'
+  - ' "...add seven...carry the one..."'
+  - '"..."'
+  - "\"...that brings the vote to...an even tie. Again. You people are no help at
+    all.\u201D"

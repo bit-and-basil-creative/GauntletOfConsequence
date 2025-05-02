@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
+  m_Name: 10_Room3_Right
+  m_EditorClassIdentifier: 
+  sceneNumber: 10
+  narrationLines:
+  - "\u201CHmm. I\u2019m not sure THAT one did anything at all. Well that\u2019s
+    no good.\u201D"
+  - "\u201CLet me see here...ah yes. I have just the thing.\u201D"
+  - "\u201CThere we go! The Potion of Correction - one sip and everything should
+    be right as rain. Probably.\u201D"
+  - "\u201CTa-da! Room 4 awaits!\u201D"
+  allowSceneAdvance: 1

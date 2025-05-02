@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
+  m_Name: 11_Room4_Intro
+  m_EditorClassIdentifier: 
+  sceneNumber: 11
+  narrationLines:
+  - "\u201COh things are getting GOOD now!\""
+  - '"A classic conundrum...instinct? Or intuition? Split-second reaction or subtle
+    inner knowing?"'
+  - "\"Honestly I forget which is which. Go ahead, make your choice!\u201D"
+  allowSceneAdvance: 0
+  isIntroSection: 1

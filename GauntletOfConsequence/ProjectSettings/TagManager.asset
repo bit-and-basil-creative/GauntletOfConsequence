@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Narrator
+  - Scene1
+  - DialogueText
   layers:
   - Default
   - TransparentFX
@@ -54,11 +56,11 @@ TagManager:
   - name: ObjectsForeground
     uniqueID: 1879884145
     locked: 0
-  - name: Narrator
-    uniqueID: 2440245065
-    locked: 0
   - name: Player
     uniqueID: 3457779077
+    locked: 0
+  - name: Narrator
+    uniqueID: 2440245065
     locked: 0
   - name: Dialogue
     uniqueID: 3277706493

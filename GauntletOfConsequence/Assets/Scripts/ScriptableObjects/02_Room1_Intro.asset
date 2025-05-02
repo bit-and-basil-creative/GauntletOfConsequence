@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
+  m_Name: 02_Room1_Intro
+  m_EditorClassIdentifier: 
+  sceneNumber: 2
+  narrationLines:
+  - "\u201CHmm...for the \u2018Gauntlet of Consequence\u2019 this room seems awfully...inconsequential,
+    wouldn\u2019t you say?\u201D"
+  - "\u201CAnyway...a classic choice. Two IDENTICAL doors. Right door, or left door.
+    Which one will it be?\""
+  allowSceneAdvance: 0
+  isIntroSection: 1
