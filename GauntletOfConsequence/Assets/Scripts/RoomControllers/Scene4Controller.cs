@@ -17,6 +17,7 @@ public class Scene4Controller : MonoBehaviour
     [Header("Arrows")]
     [SerializeField] private GameObject directionArrowA;
     [SerializeField] private GameObject directionArrowB;
+    [SerializeField] private GameObject directionArrowC;
 
     [Header("Narration")]
     [SerializeField] private NarrationEntry potionWrongEntry;
@@ -35,6 +36,7 @@ public class Scene4Controller : MonoBehaviour
         {
             dialogueManager = FindObjectOfType<DialogueManager>();
         }
+
         dialogueManager.OnDialogueComplete += HandleDialogueComplete;
     }
 
@@ -86,7 +88,7 @@ public class Scene4Controller : MonoBehaviour
 
     public void OpenDoor()
     {
-        doorAnimator.SetBool("isClicked", true);
+        doorAnimator.SetBool("isOpen", true);
     }
 
     private IEnumerator RevealPotionCAfterDialogue() 
@@ -107,6 +109,7 @@ public class Scene4Controller : MonoBehaviour
         potionEffect.GetComponent<ParticleSystem>()?.Play();
         potionC.gameObject.SetActive(true);
         potionC.EnableInteraction();
+        directionArrowC.SetActive(true);
 
         //start the next bit of narration
         dialogueFinished = false;

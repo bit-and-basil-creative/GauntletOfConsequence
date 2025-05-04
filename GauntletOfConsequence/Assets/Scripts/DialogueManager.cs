@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += c;
             if (audioSource != null) audioSource.Play(); //sound effect on each character
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
 
         //rebuild the layout to resize the background container
