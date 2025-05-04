@@ -25,9 +25,11 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// DisplayNarration method begins a full narration sequence from a NarrationEntry ScriptableObject
     /// </summary>
-   
+
     public void DisplayNarration(NarrationEntry entry)
     {
+        Debug.Log("[DialogueManager] DisplayNarration called with entry: " + entry.name);
+
         currentEntry = entry;
         currentLines = entry.narrationLines;
         currentLineIndex = 0;
@@ -38,7 +40,7 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// DisplaySingleLine method plays a single line from the current NarrationEntry by index reference.
     /// </summary>
-    
+
     public void DisplaySingleLine(int index)
     {
         StopAllCoroutines();

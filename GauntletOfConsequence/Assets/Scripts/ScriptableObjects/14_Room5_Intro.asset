@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
   m_Name: 14_Room5_Intro
   m_EditorClassIdentifier: 
-  sceneNumber: 14
+  sceneNumber: 16
   narrationLines:
   - "\u201CYES! This is it. The final decision.\""
-  - '"Behind each of these boxes lies something that will define your legacy, your
+  - '"Inside each of these chests lies something that will define your legacy, your
     essence..."'
   - "\"...YOUR VERY SOUL. Choose wisely.\u201D"
-  - " \"Alright, what\u2019ll it be? Pizza or tacos?\u201D"
   allowSceneAdvance: 0
   isIntroSection: 1

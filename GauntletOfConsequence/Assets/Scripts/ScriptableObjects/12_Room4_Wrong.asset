@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
   m_Name: 12_Room4_Wrong
   m_EditorClassIdentifier: 
-  sceneNumber: 12
+  sceneNumber: 14
   narrationLines:
   - "\"Oof...that FELT right, didn\u2019t it? Maybe your gut needs a second opinion...\u201D"
   - "\"...or that potion finally kicked in. Either way, try the other one!\u201D"
+  allowSceneAdvance: 0
+  isIntroSection: 0

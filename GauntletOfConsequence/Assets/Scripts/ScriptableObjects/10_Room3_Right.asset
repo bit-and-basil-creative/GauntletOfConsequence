@@ -17,7 +17,5 @@ MonoBehaviour:
   - "\u201CHmm. I\u2019m not sure THAT one did anything at all. Well that\u2019s
     no good.\u201D"
   - "\u201CLet me see here...ah yes. I have just the thing.\u201D"
-  - "\u201CThere we go! The Potion of Correction - one sip and everything should
-    be right as rain. Probably.\u201D"
-  - "\u201CTa-da! Room 4 awaits!\u201D"
-  allowSceneAdvance: 1
+  allowSceneAdvance: 0
+  isIntroSection: 0

@@ -2,7 +2,7 @@
 - Project name: GauntletOfConsequence
 - Unity version: Unity 2022.3.55f1
 - Active game object:
-  - Name: Room2Controller
+  - Name: Scene4Controller
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

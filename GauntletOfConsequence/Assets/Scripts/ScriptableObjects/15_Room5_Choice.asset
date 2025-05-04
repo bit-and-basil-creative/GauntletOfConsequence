@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
   m_Name: 15_Room5_Choice
   m_EditorClassIdentifier: 
-  sceneNumber: 15
+  sceneNumber: 18
   narrationLines:
   - "\u201CAhhh, I see...\""
   - '"Hmm, okay. Give me one moment here..."'
@@ -20,3 +20,5 @@ MonoBehaviour:
   - '"..."'
   - "\"...that brings the vote to...an even tie. Again. You people are no help at
     all.\u201D"
+  allowSceneAdvance: 1
+  isIntroSection: 0

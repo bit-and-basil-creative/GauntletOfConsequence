@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b917d260f2e07499e14fcb305c2e70, type: 3}
   m_Name: 13_Room4_Right
   m_EditorClassIdentifier: 
-  sceneNumber: 13
+  sceneNumber: 15
   narrationLines:
   - "\u201CThere you go! All you needed was a little internal conflict.\""
   - "\"Down the hatch, brave decider of vaguely defined traits. We\u2019re nearly
     done!\u201D"
   allowSceneAdvance: 1
+  isIntroSection: 0
