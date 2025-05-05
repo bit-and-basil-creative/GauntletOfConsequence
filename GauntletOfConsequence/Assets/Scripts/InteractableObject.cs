@@ -5,9 +5,7 @@ public class InteractableObject : MonoBehaviour
 {
     public string interactID; //what object was clicked
     public bool isEnabled = false; //to turn interactivity on or off
-    [System.Serializable]
-    public class StringEvent : UnityEvent<string> { }
-    public StringEvent onClickAction;
+    public UnityEvent onClickAction;
 
     public void EnableInteraction()
     {
@@ -24,6 +22,6 @@ public class InteractableObject : MonoBehaviour
             return;
         }
 
-        onClickAction?.Invoke(interactID);
+        onClickAction?.Invoke();
     }
 }

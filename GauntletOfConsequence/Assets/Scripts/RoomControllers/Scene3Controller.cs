@@ -8,17 +8,12 @@ public class Scene3Controller : MonoBehaviour
     [SerializeField] private InteractableObject buttonB;
     [SerializeField] private GameObject directionArrowA;
     [SerializeField] private GameObject directionArrowB;
-    //[SerializeField] private Animator buttonAnimatorA;
-    //[SerializeField] private Animator buttonAnimatorB;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private NarrationEntry buttonWrongEntry;
     [SerializeField] private NarrationEntry buttonRightEntry;
-
-    [Header("Animations")]
     [SerializeField] private Animator doorAnimator;
 
     private string firstButtonClicked = null;
-    private bool isIntroFinished = false;
 
     private void Start()
     {
@@ -32,19 +27,11 @@ public class Scene3Controller : MonoBehaviour
         buttonB.DisableInteraction();
         directionArrowA.SetActive(false);
         directionArrowB.SetActive(false);
-
-        buttonA.onClickAction.AddListener((id) => OnButtonClicked("ButtonALeft"));
-        buttonB.onClickAction.AddListener((id) => OnButtonClicked("ButtonBRight"));
-
     }
 
     private void HandleDialogueComplete()
     {
-        if (!isIntroFinished)
-        {
-            isIntroFinished = true;
-            EnableButtons();
-        }
+        EnableButtons();
     }
 
     public void EnableButtons()
@@ -57,9 +44,7 @@ public class Scene3Controller : MonoBehaviour
 
     public void OnButtonClicked(string buttonID)
     {
-
         Debug.Log($"[Scene3Controller] Button clicked ID: {buttonID}");
-        Debug.Log($"[Scene3Controller] Sender GameObject: {UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject?.name}");
 
         if (buttonID == "ButtonALeft")
         {
@@ -78,18 +63,16 @@ public class Scene3Controller : MonoBehaviour
         if (firstButtonClicked == null)
         {
             firstButtonClicked = buttonID;
+
+            // Play "wrong" narration
             dialogueManager.DisplayNarration(buttonWrongEntry);
         }
         // SECOND CHOICE = CORRECT
         else
         {
+            // Play "right" narration, THEN load next room
             StartCoroutine(PlaySuccessAndLoad());
         }
-    }
-
-    public void OpenDoor()
-    {
-        doorAnimator.SetBool("isOpen", true);
     }
 
     private IEnumerator PlaySuccessAndLoad()
@@ -100,9 +83,15 @@ public class Scene3Controller : MonoBehaviour
         // Wait until dialogue finishes before loading next room
         bool dialogueFinished = false;
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
-        yield return new WaitUntil(() => dialogueFinished);
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitUntil(() => dialogueFinished);
+        yield return new WaitForSeconds(2f); // Optional extra delay
         gameManager.LoadNextRoom();
     }
+
+    private void OpenDoor()
+    {
+        doorAnimator.SetBool("isOpen", true);
+    }
+
 }

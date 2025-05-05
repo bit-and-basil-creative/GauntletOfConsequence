@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Scene5Controller : MonoBehaviour
 {
