@@ -18,5 +18,5 @@ MonoBehaviour:
   - "\u201CAh, WELCOME traveller!\""
   - "\"Beyond this unremarkable door lies the key to your fate... \u2018The Gauntlet
     of Consequence\u2019 awaits...\u201D"
-  allowSceneAdvance: 1
+  allowSceneAdvance: 0
   isIntroSection: 0

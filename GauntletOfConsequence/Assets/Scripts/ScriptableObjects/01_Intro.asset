@@ -17,7 +17,8 @@ MonoBehaviour:
   - "\u201COh, finally...I\u2019ve been waiting for AGES. Oh, uh...I mean, WELCOME
     traveller! It\u2019s time for you to take the ultimate test to discover your
     fate.\""
-  - "\"Past this door lies... uh... hang on, I wrote it down somewhere - ah! The
-    Gauntlet of Consequence!\u201D"
+  - '"Past this door lies... uh... hang on, I wrote it down somewhere - ah yes! The
+    Gauntlet of Consequence!"'
   - "\"Sounds impressive, right? Shall we? Right this way.\u201D"
   allowSceneAdvance: 1
+  isIntroSection: 0

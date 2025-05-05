@@ -13,9 +13,12 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TextMeshProUGUI dialogueText; //text box that stores dialogue
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private AudioSource audioSource; //for typing or voice sound while dialogue is showing
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject ellipsis; //player clicks to move to the next dialogue box
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource narratorAudioSource;
+    [SerializeField] private AudioClip narratorLoopClip;
 
     //for internal tracking
     private List<string> currentLines; //all dialogue lines for the current entry
@@ -75,13 +78,27 @@ public class DialogueManager : MonoBehaviour
     //coroutine for typewriter effect
     private IEnumerator TypewriterEffect(string line)
     {
+
+        //start narrator voice loop
+        if (narratorAudioSource != null && narratorLoopClip != null)
+        {
+            narratorAudioSource.clip = narratorLoopClip;
+            narratorAudioSource.loop = true;
+            narratorAudioSource.Play();
+        }
+
         dialogueText.text = "";
 
         foreach (char c in line)
         {
             dialogueText.text += c;
-            if (audioSource != null) audioSource.Play(); //sound effect on each character
             yield return new WaitForSeconds(0.03f);
+        }
+
+        // Stop narrator voice loop
+        if (narratorAudioSource.isPlaying)
+        {
+            narratorAudioSource.Stop();
         }
 
         //rebuild the layout to resize the background container

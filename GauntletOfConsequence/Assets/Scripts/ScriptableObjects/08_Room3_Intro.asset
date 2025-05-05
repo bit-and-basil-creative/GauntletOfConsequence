@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNumber: 8
   narrationLines:
-  - "\u201CHere lies the Test of the Elixirs! I\u2019m pretty sure one grants wisdom.\""
-  - "\"The other...well I\u2019m not sure, I\u2019ve only ever tasted the one. Bottoms
-    up! Which one will it be?\u201D"
+  - "\u201CHere lies the Test of the Elixirs! One potion grants wisdom and the other...\""
+  - "\"...well I\u2019m not sure to be honest, I\u2019ve only ever tasted the one.
+    Oh well! Bottoms up! Which one will it be?\u201D"
   allowSceneAdvance: 0
   isIntroSection: 1

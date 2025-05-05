@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNumber: 4
   narrationLines:
-  - "\u201CWell, we can\u2019t always be right the first time. Let\u2019s see what's
-    behind door number two!\u201D"
+  - "\u201CIt's fine...we can\u2019t always be right the first time. Let\u2019s see
+    what lies beyond door number two!\u201D"
   allowSceneAdvance: 1
+  isIntroSection: 0

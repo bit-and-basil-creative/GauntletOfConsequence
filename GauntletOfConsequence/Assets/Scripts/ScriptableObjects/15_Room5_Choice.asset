@@ -15,10 +15,10 @@ MonoBehaviour:
   sceneNumber: 18
   narrationLines:
   - "\u201CAhhh, I see...\""
-  - '"Hmm, okay. Give me one moment here..."'
+  - '"Hmm, yes...okay. Give me one moment here..."'
   - ' "...add seven...carry the one..."'
   - '"..."'
   - "\"...that brings the vote to...an even tie. Again. You people are no help at
-    all.\u201D"
+    all. <sigh>\u201D"
   allowSceneAdvance: 1
   isIntroSection: 0

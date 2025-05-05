@@ -9,15 +9,15 @@ public class Scene4Controller : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Potions")]
-    [SerializeField] private InteractableObject potionA;
-    [SerializeField] private InteractableObject potionB;
-    [SerializeField] private InteractableObject potionC;
+    [SerializeField] private InteractableObject potionA; //blue potion
+    [SerializeField] private InteractableObject potionB; //yellow potion
+    [SerializeField] private InteractableObject potionC; //purple potion
     [SerializeField] private GameObject potionEffect;
+    [SerializeField] private AudioSource potionEffectSource;
 
     [Header("Arrows")]
     [SerializeField] private GameObject directionArrowA;
     [SerializeField] private GameObject directionArrowB;
-    [SerializeField] private GameObject directionArrowC;
 
     [Header("Narration")]
     [SerializeField] private NarrationEntry potionWrongEntry;
@@ -38,6 +38,12 @@ public class Scene4Controller : MonoBehaviour
         }
 
         dialogueManager.OnDialogueComplete += HandleDialogueComplete;
+
+        potionA.DisableInteraction();
+        potionB.DisableInteraction();
+        potionC.DisableInteraction();
+        directionArrowA.SetActive(false);
+        directionArrowB.SetActive(false);
     }
 
     private void HandleDialogueComplete()
@@ -55,14 +61,16 @@ public class Scene4Controller : MonoBehaviour
 
     public void OnPotionClicked(string potionID)
     {
-        if (potionID == "BluePotion")
+        if (potionID == "PotionA")
         {
             potionA.DisableInteraction();
+            potionA.gameObject.SetActive(false);
             directionArrowA.SetActive(false);
         }
-        else if (potionID == "YellowPotion")
+        else if (potionID == "PotionB")
         {
             potionB.DisableInteraction();
+            potionB.gameObject.SetActive(false);
             directionArrowB.SetActive(false);
         }
 
@@ -101,15 +109,22 @@ public class Scene4Controller : MonoBehaviour
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
         yield return new WaitUntil(() => dialogueFinished);
 
+        potionA.DisableInteraction();
+        potionA.gameObject.SetActive(false);
+        directionArrowA.SetActive(false);
+        potionB.DisableInteraction();
+        potionB.gameObject.SetActive(false);
+        directionArrowB.SetActive(false);
+
         //pause before potion appears
         yield return new WaitForSeconds(0.5f);
 
         //show the potion appear effect and make Potion C visible + clickable
         if (potionEffect != null) potionEffect.SetActive(true);
         potionEffect.GetComponent<ParticleSystem>()?.Play();
+        potionEffectSource.Play();
         potionC.gameObject.SetActive(true);
         potionC.EnableInteraction();
-        directionArrowC.SetActive(true);
 
         //start the next bit of narration
         dialogueFinished = false;
@@ -126,7 +141,15 @@ public class Scene4Controller : MonoBehaviour
         bool dialogueFinished = false;
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         gameManager.LoadNextRoom();
+    }
+
+    private void OnDisable()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.OnDialogueComplete -= HandleDialogueComplete;
+        }
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNumber: 14
   narrationLines:
-  - "\"Oof...that FELT right, didn\u2019t it? Maybe your gut needs a second opinion...\u201D"
-  - "\"...or that potion finally kicked in. Either way, try the other one!\u201D"
+  - "\"Oof...that FELT right, didn\u2019t it? Maybe your gut needs a second opinion...or
+    that potion finally kicked in. Either way, try the other one!\u201D"
   allowSceneAdvance: 0
   isIntroSection: 0

@@ -16,6 +16,5 @@ MonoBehaviour:
   narrationLines:
   - "\u201CThere we go! The Potion of Correction - one sip and everything should
     be right as rain. Probably.\u201D"
-  - "\u201CTa-da! Room 4 awaits!\u201D"
-  allowSceneAdvance: 1
+  allowSceneAdvance: 0
   isIntroSection: 0

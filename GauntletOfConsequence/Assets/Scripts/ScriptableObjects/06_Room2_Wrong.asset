@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNumber: 6
   narrationLines:
-  - "\u201COh, hmm...interesting. You picked THAT one? That one...doesn\u2019t do
-    ANYTHING. Well, no matter. Go ahead and press the other one.\""
+  - "\u201COh, hmm...interesting...you picked THAT one. That one...well it doesn\u2019t
+    do ANYTHING. Well, no matter. Go ahead and press the other one.\""
   allowSceneAdvance: 0
+  isIntroSection: 0

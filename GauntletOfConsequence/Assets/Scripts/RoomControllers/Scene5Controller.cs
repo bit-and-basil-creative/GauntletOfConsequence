@@ -23,6 +23,12 @@ public class Scene5Controller : MonoBehaviour
             dialogueManager = FindObjectOfType<DialogueManager>();
         }
         dialogueManager.OnDialogueComplete += HandleDialogueComplete;
+
+        pillarA.DisableInteraction();
+        pillarB.DisableInteraction();
+        directionArrowA.SetActive(false);
+        directionArrowB.SetActive(false);
+        trapDoor.SetActive(false);
     }
 
     private void HandleDialogueComplete()
@@ -80,6 +86,14 @@ public class Scene5Controller : MonoBehaviour
         yield return new WaitUntil(() => dialogueFinished);
         yield return new WaitForSeconds(2f); // Optional extra delay
         gameManager.LoadNextRoom();
+    }
+
+    private void OnDisable()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.OnDialogueComplete -= HandleDialogueComplete;
+        }
     }
 }
 

@@ -94,8 +94,17 @@ public class Scene2Controller : MonoBehaviour
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
 
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(1f); // Optional extra delay
+        yield return new WaitForSeconds(1.5f); // Optional extra delay
 
         gameManager.LoadNextRoom();
     }
+
+    private void OnDisable()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.OnDialogueComplete -= HandleDialogueComplete;
+        }
+    }
+
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNumber: 7
   narrationLines:
-  - "\u201CWell look at that. A hidden door has been revealed! Let\u2019s step through
+  - "\u201CWell look at that, you successfully opened a door. Let\u2019s step through
     and see what awaits you in the next room.\u201D"
   allowSceneAdvance: 1
+  isIntroSection: 0
