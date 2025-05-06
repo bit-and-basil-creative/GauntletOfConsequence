@@ -100,7 +100,7 @@ public class Scene6Controller : MonoBehaviour
         bool dialogueFinished = false;
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         gameManager.LoadNextRoom();
     }
 }

@@ -23,7 +23,7 @@ public class Scene7Controller : MonoBehaviour
     {
         // When the final line of dialogue is finished, return to main menu
         dialogueManager.OnDialogueComplete -= HandleDialogueComplete;
-        StartCoroutine(PauseBeforeMainMenu());
+        StartCoroutine(PauseBeforeCredits());
     }
 
     private void OnDestroy()
@@ -32,9 +32,9 @@ public class Scene7Controller : MonoBehaviour
             dialogueManager.OnDialogueComplete -= HandleDialogueComplete;
     }
 
-    private IEnumerator PauseBeforeMainMenu()
+    private IEnumerator PauseBeforeCredits()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainMenu");
+        gameManager.LoadNextRoom();
     }
 }

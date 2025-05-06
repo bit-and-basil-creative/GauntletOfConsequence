@@ -10,16 +10,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private NarrationEntry[] narrationSequence;
     [SerializeField] private int[] narrationIndexPerScene;
+    [SerializeField] private CanvasGroup fadeOverlay;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] sceneMusicClips;
+
+    [Header("Settings")]
+    [SerializeField] private float fadeDuration = 1f;
 
     private int sceneIndex; //to track which scene we are on
 
     void Start()
     {
         sceneIndex = 0; //start in scene 1 (intro room)
+        StartCoroutine(FadeIn());
         LoadSceneByIndex(sceneIndex);
     }
 
@@ -68,7 +73,7 @@ public class GameManager : MonoBehaviour
     public void LoadNextRoom()
     {
         sceneIndex++;
-        LoadSceneByIndex(sceneIndex);
+        StartCoroutine(FadeSceneTransition(sceneIndex));
     }
 
     public NarrationEntry GetNarrationForScene()
@@ -128,4 +133,39 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(FadeInMusic(newClip, fadeDuration));
     }
 
+    IEnumerator FadeSceneTransition(int index)
+    {
+        yield return StartCoroutine(FadeOut());
+
+        LoadSceneByIndex(index);
+
+        yield return new WaitForSeconds(0.25f); // slight delay for smoother transition
+        yield return StartCoroutine(FadeIn());
+    }
+
+    private IEnumerator FadeIn()
+    {
+        float t = 0;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeOverlay.alpha = 1 - (t / fadeDuration);
+            yield return null;
+        }
+        fadeOverlay.alpha = 0;
+        fadeOverlay.blocksRaycasts = false;
+    }
+
+    private IEnumerator FadeOut()
+    {
+        fadeOverlay.blocksRaycasts = true;
+        float t = 0;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeOverlay.alpha = t / fadeDuration;
+            yield return null;
+        }
+        fadeOverlay.alpha = 1;
+    }
 }
