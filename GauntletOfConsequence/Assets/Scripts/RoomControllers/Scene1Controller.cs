@@ -6,6 +6,8 @@ public class Scene1Controller : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private InteractableObject door;
     [SerializeField] private GameObject directionArrow;
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class Scene1Controller : MonoBehaviour
     {
         door.EnableInteraction();
         directionArrow.SetActive(true);
+        controller.Disappear();
     }
 
     private void OnDisable()

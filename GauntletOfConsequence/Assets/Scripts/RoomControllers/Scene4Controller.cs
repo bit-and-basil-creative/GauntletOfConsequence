@@ -25,6 +25,10 @@ public class Scene4Controller : MonoBehaviour
     [SerializeField] private NarrationEntry potionCEntry;
     [SerializeField] private NarrationEntry potionFinalEntry;
 
+    [Header("Narrator")]
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
+
     [Header("Animations")]
     [SerializeField] private Animator doorAnimator;
 
@@ -116,8 +120,9 @@ public class Scene4Controller : MonoBehaviour
         potionB.gameObject.SetActive(false);
         directionArrowB.SetActive(false);
 
+        controller.CastSpell();
         //pause before potion appears
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
 
         //show the potion appear effect and make Potion C visible + clickable
         if (potionEffect != null) potionEffect.SetActive(true);
@@ -141,7 +146,8 @@ public class Scene4Controller : MonoBehaviour
         bool dialogueFinished = false;
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(2f);
+        controller.Disappear();
+        yield return new WaitForSeconds(3f);
         gameManager.LoadNextRoom();
     }
 

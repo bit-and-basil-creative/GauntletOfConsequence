@@ -3,15 +3,25 @@ using UnityEngine;
 
 public class Scene3Controller : MonoBehaviour
 {
+    [Header("UI References")]
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Interactables")]
     [SerializeField] private InteractableObject buttonA;
     [SerializeField] private InteractableObject buttonB;
     [SerializeField] private GameObject directionArrowA;
     [SerializeField] private GameObject directionArrowB;
-    [SerializeField] private GameManager gameManager;
+    [SerializeField] private Animator doorAnimator;
+    [SerializeField] private AudioSource doorOpenSound;
+
+    [Header("Dialogue")]
     [SerializeField] private NarrationEntry buttonWrongEntry;
     [SerializeField] private NarrationEntry buttonRightEntry;
-    [SerializeField] private Animator doorAnimator;
+
+    [Header("Narrator")]
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
 
     private string firstButtonClicked = null;
 
@@ -78,6 +88,7 @@ public class Scene3Controller : MonoBehaviour
     private IEnumerator PlaySuccessAndLoad()
     {
         dialogueManager.DisplayNarration(buttonRightEntry);
+        doorOpenSound.Play();
         OpenDoor();
 
         // Wait until dialogue finishes before loading next room
@@ -85,7 +96,8 @@ public class Scene3Controller : MonoBehaviour
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
 
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(2f); // Optional extra delay
+        controller.Disappear();
+        yield return new WaitForSeconds(3f); // Optional extra delay
         gameManager.LoadNextRoom();
     }
 

@@ -12,6 +12,7 @@ public class Scene6Controller : MonoBehaviour
     [SerializeField] private GameObject chestAEffect;
     [SerializeField] private GameObject chestB;
     [SerializeField] private GameObject chestBEffect;
+    [SerializeField] private AudioSource chestAppearSound;
 
     [Header("Interactables")]
     [SerializeField] private InteractableObject pizza;
@@ -24,6 +25,10 @@ public class Scene6Controller : MonoBehaviour
     [Header("Narration")]
     [SerializeField] private NarrationEntry foodRevealLine;
     [SerializeField] private NarrationEntry finalLine;
+
+    [Header("Narrator")]
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
 
     private void Start()
     {
@@ -61,7 +66,6 @@ public class Scene6Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        // same for second narration
         if (chestAEffect != null)
         {
             chestAEffect.SetActive(true);
@@ -81,8 +85,11 @@ public class Scene6Controller : MonoBehaviour
         System.Action markFinished = () => dialogueFinished = true;
         dialogueManager.OnDialogueComplete += markFinished;
         dialogueManager.DisplayNarration(foodRevealLine);
+        controller.CastSpell();
         yield return new WaitUntil(() => dialogueFinished);
         dialogueManager.OnDialogueComplete -= markFinished;
+
+        chestAppearSound.Play();
 
         //show food + arrows
         pizza.gameObject.SetActive(true);
@@ -100,7 +107,8 @@ public class Scene6Controller : MonoBehaviour
         bool dialogueFinished = false;
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(2f);
+        controller.Disappear();
+        yield return new WaitForSeconds(3f);
         gameManager.LoadNextRoom();
     }
 }

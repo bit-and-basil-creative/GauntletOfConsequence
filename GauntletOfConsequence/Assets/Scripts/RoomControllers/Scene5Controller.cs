@@ -3,15 +3,24 @@ using UnityEngine;
 
 public class Scene5Controller : MonoBehaviour
 {
+    [Header("UI References")]
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Interactables")]
     [SerializeField] private InteractableObject pillarA;
     [SerializeField] private InteractableObject pillarB;
     [SerializeField] private GameObject directionArrowA;
     [SerializeField] private GameObject directionArrowB;
     [SerializeField] private GameObject trapDoor;
-    [SerializeField] private GameManager gameManager;
+
+    [Header("Narration")]
     [SerializeField] private NarrationEntry pillarWrongEntry;
     [SerializeField] private NarrationEntry pillarRightEntry;
+
+    [Header("Narrator")]
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
 
     private string firstPillarClicked = null;
 
@@ -83,7 +92,8 @@ public class Scene5Controller : MonoBehaviour
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
 
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(2f); // Optional extra delay
+        controller.Disappear();
+        yield return new WaitForSeconds(3f); // Optional extra delay
         gameManager.LoadNextRoom();
     }
 

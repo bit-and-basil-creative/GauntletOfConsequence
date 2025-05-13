@@ -829,14 +829,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1335474984}
+  gameManager: {fileID: 216289225}
   buttonA: {fileID: 1946103743}
   buttonB: {fileID: 1312168592}
   directionArrowA: {fileID: 1721582975}
   directionArrowB: {fileID: 1155434935}
-  gameManager: {fileID: 216289225}
+  doorAnimator: {fileID: 1471468797}
   buttonWrongEntry: {fileID: 11400000, guid: d333c220fd32fe441bd7f451b176c758, type: 2}
   buttonRightEntry: {fileID: 11400000, guid: 5a9be87e8a5f7e84d968a322afe50d26, type: 2}
-  doorAnimator: {fileID: 1471468797}
+  controller: {fileID: 958363460}
+  narrator: {fileID: 909005234}
 --- !u!1 &53225490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1753,134 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5414295553919038784, guid: 4ea0326d4e6eaec4498d9386e80756b5, type: 3}
   m_PrefabInstance: {fileID: 396299983}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &92791350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92791351}
+  - component: {fileID: 92791352}
+  m_Layer: 0
+  m_Name: ChestAppearSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92791351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92791350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077341571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &92791352
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92791350}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2719c0fb430d15543b5cbb3b7a6c5b30, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &94911999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,9 +3151,9 @@ RectTransform:
   - {fileID: 1924316861}
   m_Father: {fileID: 1783959303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 631.86615, y: -620.7013}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &145074552
@@ -5821,6 +5951,11 @@ Transform:
   - {fileID: 945369544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &237378024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 811231150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253356518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5414295553919038784, guid: 4ea0326d4e6eaec4498d9386e80756b5, type: 3}
@@ -6012,6 +6147,11 @@ Transform:
   - {fileID: 1555136588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &290605951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 3905782039441059459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291787959
 GameObject:
   m_ObjectHideFlags: 0
@@ -19286,6 +19426,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5551790332738559216, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
   m_PrefabInstance: {fileID: 811231150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &811231152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 811231150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237378024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &812623329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23650,6 +23801,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &909005234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 958363458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &910132720
 GameObject:
   m_ObjectHideFlags: 0
@@ -26069,14 +26225,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1335474984}
+  gameManager: {fileID: 216289225}
   pillarA: {fileID: 1550609296}
   pillarB: {fileID: 1647980380}
   directionArrowA: {fileID: 1687426984}
   directionArrowB: {fileID: 88576766}
   trapDoor: {fileID: 2033264231}
-  gameManager: {fileID: 216289225}
   pillarWrongEntry: {fileID: 11400000, guid: 66d049c223d0916468c20f59632b783b, type: 2}
   pillarRightEntry: {fileID: 11400000, guid: e4d691feafbf5264394952576e3786ba, type: 2}
+  controller: {fileID: 993938728}
+  narrator: {fileID: 993938727}
 --- !u!1 &955439805
 GameObject:
   m_ObjectHideFlags: 0
@@ -26271,6 +26429,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5551790332738559216, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
   m_PrefabInstance: {fileID: 958363458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &958363460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 958363458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909005234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &965584981
 GameObject:
   m_ObjectHideFlags: 0
@@ -26539,6 +26708,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &993938727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 531580818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &993938728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 531580818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993938727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &997933467
 GameObject:
   m_ObjectHideFlags: 0
@@ -27086,6 +27271,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5551790332738559216, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
   m_PrefabInstance: {fileID: 3905782039441059459}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008298886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 3905782039441059459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290605951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1010797517
 GameObject:
   m_ObjectHideFlags: 0
@@ -27772,6 +27968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1335474984}
+  gameManager: {fileID: 216289225}
   doorA: {fileID: 1535723342}
   doorB: {fileID: 443116680}
   closetA: {fileID: 1325778279}
@@ -27780,9 +27977,10 @@ MonoBehaviour:
   directionArrowB: {fileID: 1983110723}
   doorAnimatorA: {fileID: 1535723344}
   doorAnimatorB: {fileID: 443116683}
-  gameManager: {fileID: 216289225}
   doorWrongEntry: {fileID: 11400000, guid: 825e38d26cfd63a4c96cb358b8ff76cb, type: 2}
   doorRightEntry: {fileID: 11400000, guid: d3af6105e8fd81d42a39a64b425cadfd, type: 2}
+  controller: {fileID: 2079533148}
+  narrator: {fileID: 2079533147}
 --- !u!1 &1077341570
 GameObject:
   m_ObjectHideFlags: 0
@@ -27817,6 +28015,7 @@ Transform:
   - {fileID: 135182062}
   - {fileID: 84063827}
   - {fileID: 1176011279}
+  - {fileID: 92791351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1091887141
@@ -32153,12 +32352,15 @@ MonoBehaviour:
   chestAEffect: {fileID: 854044376}
   chestB: {fileID: 1664502492}
   chestBEffect: {fileID: 1993547147}
+  chestAppearSound: {fileID: 92791352}
   pizza: {fileID: 1630083866}
   taco: {fileID: 2090509550}
   directionArrowA: {fileID: 218563670}
   directionArrowB: {fileID: 1666609906}
   foodRevealLine: {fileID: 11400000, guid: c7c8ba00d37da2f4cb309fd8010e0040, type: 2}
   finalLine: {fileID: 11400000, guid: f0410ca5983ac6048889037dc6bd90bb, type: 2}
+  controller: {fileID: 2052772236}
+  narrator: {fileID: 2052772235}
 --- !u!1 &1182036330
 GameObject:
   m_ObjectHideFlags: 0
@@ -32857,7 +33059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1242437690
 Transform:
   m_ObjectHideFlags: 0
@@ -39270,6 +39472,8 @@ MonoBehaviour:
   potionRightEntry: {fileID: 11400000, guid: 53f178b33c8d1b54c83352c00e87f13e, type: 2}
   potionCEntry: {fileID: 11400000, guid: 008f470895e7c2449beca622a4b867cc, type: 2}
   potionFinalEntry: {fileID: 11400000, guid: 30b67b1351d79e641b0a4fea1c5294cc, type: 2}
+  controller: {fileID: 811231152}
+  narrator: {fileID: 237378024}
   doorAnimator: {fileID: 459818351}
 --- !u!1 &1451093387
 GameObject:
@@ -45776,9 +45980,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145074551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556274486
@@ -46460,9 +46664,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1783959303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 631.86615, y: -339.63422}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592288899
@@ -46485,43 +46689,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'VISUAL ASSETS (all from itch.io)
-
-    Aspecs Gaming - Pixel Cursors
-
-    Caz
-    - Pixel Fantasy RPG Icons
-
-    CraftPix - Top Down Pixel Dungeon Assets
-
-    Gif
-    - Super Retro World Interior Pack
-
-    LimeZu - Modern Interiors Tileset
-
-    Penzilla
-    - Top Down Retro Interior Tileset
-
-    Petricake Games - Mystic Acid! Dungeon
-    Tileset
-
-    PiiiXL - Textures
-
-
-    AUDIO ASSETS
-
-    Sounds from freesound.org
-    and opengameart.org
-
-
-    FONTS
-
-    Monogram by datagoblin
-
-    VGA New by Aidan
-    Levy
-
-'
+  m_text: "VISUAL ASSETS (all from itch.io)\nAspecs Gaming - Pixel Cursors\nCaz -
+    Pixel Fantasy RPG Icons\nCraftPix - Top Down Pixel Dungeon Assets\nGif - Super
+    Retro World Interior Pack\nLimeZu - Modern Interiors Tileset\nPenzilla - Top
+    Down Retro Interior Tileset \nPenzilla - Hooded Protagonist (Narrator)\nPetricake
+    Games - Mystic Acid! Dungeon Tileset\nPiiiXL - Textures\n\nAUDIO ASSETS\nSounds
+    from freesound.org, opengameart.org,\nand zapsplat.com\n\nFONTS\nMonogram by
+    datagoblin\nVGA New by Aidan Levy\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd4ca28e7a49f24d8e8a3d066486934, type: 2}
   m_sharedMaterial: {fileID: -7787197659865338184, guid: dbd4ca28e7a49f24d8e8a3d066486934, type: 2}
@@ -46548,8 +46722,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -47186,6 +47360,8 @@ MonoBehaviour:
   dialogueManager: {fileID: 1335474984}
   door: {fileID: 483246784}
   directionArrow: {fileID: 1771832775}
+  controller: {fileID: 1008298886}
+  narrator: {fileID: 290605951}
 --- !u!4 &1640133810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1831721834925023017, guid: 54196ab3a44748c4aa2b951916b62c94, type: 3}
@@ -49262,9 +49438,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1783959303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 631.86615, y: -103.56711}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886200559
@@ -49879,9 +50055,9 @@ RectTransform:
   - {fileID: 1430755411}
   m_Father: {fileID: 145074551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 397.5, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 225, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924316862
@@ -54573,6 +54749,22 @@ MonoBehaviour:
   onClickAction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2052772235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 135182061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2052772236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 135182061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052772235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064496605
 GameObject:
   m_ObjectHideFlags: 0
@@ -56835,6 +57027,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2079533147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6756957882197505043, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 790563336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079533148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7507447870161457422, guid: 95064142abf1d0e47ab8f5570b7b8c01, type: 3}
+  m_PrefabInstance: {fileID: 790563336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079533147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c0eb246e493349b33786468e57a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085227947
 GameObject:
   m_ObjectHideFlags: 0
@@ -56867,9 +57075,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1783959303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 631.86615, y: -40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085227949

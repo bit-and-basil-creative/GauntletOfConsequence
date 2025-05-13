@@ -3,7 +3,11 @@ using System.Collections;
 
 public class Scene2Controller : MonoBehaviour
 {
+    [Header("UI References")]
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Interactables")]
     [SerializeField] private InteractableObject doorA;
     [SerializeField] private InteractableObject doorB;
     [SerializeField] private GameObject closetA;
@@ -12,9 +16,14 @@ public class Scene2Controller : MonoBehaviour
     [SerializeField] private GameObject directionArrowB;
     [SerializeField] private Animator doorAnimatorA;
     [SerializeField] private Animator doorAnimatorB;
-    [SerializeField] private GameManager gameManager;
+
+    [Header("Dialogue")]
     [SerializeField] private NarrationEntry doorWrongEntry;
     [SerializeField] private NarrationEntry doorRightEntry;
+
+    [Header("Narrator")]
+    [SerializeField] private NarratorController controller;
+    [SerializeField] private GameObject narrator;
 
     private string firstDoorClicked = null;
     private bool isIntroFinished = false;
@@ -94,7 +103,8 @@ public class Scene2Controller : MonoBehaviour
         dialogueManager.OnDialogueComplete += () => dialogueFinished = true;
 
         yield return new WaitUntil(() => dialogueFinished);
-        yield return new WaitForSeconds(2f); // Optional extra delay
+        controller.Disappear();
+        yield return new WaitForSeconds(3f); // Optional extra delay
 
         gameManager.LoadNextRoom();
     }
